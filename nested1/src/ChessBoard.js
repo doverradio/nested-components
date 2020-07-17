@@ -1,6 +1,4 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
 
 
 class ChessBoard extends React.Component{
@@ -40,12 +38,4 @@ class ChessCell extends React.Component {
   }
 }
 
-function App() {
-  return (
-    <div className="App">
-	<ChessBoard />
-    </div>
-  );
-}
-
-export default App;
+export default ChessBoard
