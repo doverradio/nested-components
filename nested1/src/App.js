@@ -2,6 +2,37 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+class InputCellNumber extends React.Component {
+	constructor() {
+		super();
+		this.handleChange = this.handleChange.bind(this);
+		this.state = {
+			cells : 64
+		}
+	}
+	handleChange = (e) => {
+		e.preventDefault();
+		this.setState({cells: e.target.value})
+	}
+	
+	render() {
+		return(
+		<>
+		<form>
+			<div className="form-group">
+				<label htmlFor="cellnum">Enter number of cells desired</label>
+				<input 
+				id="cellnum"
+				value={this.state.cells}
+				name="cellnum"
+				/>
+			</div>
+		</form>
+		</>
+		)
+	}
+}
+
 
 class ChessBoard extends React.Component{
   render() {
@@ -43,6 +74,8 @@ class ChessCell extends React.Component {
 function App() {
   return (
     <div className="App">
+	<InputCellNumber />
+	<br />
 	<ChessBoard />
     </div>
   );
