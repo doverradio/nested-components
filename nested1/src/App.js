@@ -7,7 +7,7 @@ class InputCellNumber extends React.Component {
 		super();
 		this.handleChange = this.handleChange.bind(this);
 		this.state = {
-			cells : 64
+			cells : null
 		}
 	}
 	handleChange = (e) => {
@@ -24,10 +24,13 @@ class InputCellNumber extends React.Component {
 				<input 
 				id="cellnum"
 				value={this.state.cells}
+				onChange={this.handleChange}
 				name="cellnum"
 				/>
 			</div>
 		</form>
+		<br />
+		{ this.state.cells ? <ChessCell number={this.state.cells}/> : null}
 		</>
 		)
 	}
@@ -76,7 +79,7 @@ function App() {
     <div className="App">
 	<InputCellNumber />
 	<br />
-	<ChessBoard />
+	
     </div>
   );
 }
